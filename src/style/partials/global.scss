@@ -278,6 +278,91 @@ $spacer: 15px;
         vertical-align: middle;
         gap: 15px;
     }
+    form{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    input{
+        border: 1px solid #999;
+        color: #999;
+        border-radius: 5px;
+        padding: 13px 9px;
+    }
+    button{
+        padding: 13px 18px;
+        background-color: $orange;
+        color: white;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: $bol;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+}
+
+footer{
+    background-color: #2a272e;
+    #logo{
+        -webkit-filter: grayscale(1);
+    }
+    .content{
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 30px;
+    }
+    $paddingBottom: 10px;
+    .small_header{
+        padding-bottom: 25px;
+    }
+    span,
+    .legal_txt{
+        font-size: 16px;
+    }
+    .legal_txt{
+        color: #555258;
+    }
+    span{
+        color: #ccc;
+        display: block;
+        padding-bottom: $paddingBottom;
+    }
+    .orange_txt{
+        color: $orange;
+    }
+    .mail_href{
+        display: block;
+        font-size: 18px;
+        font-weight: $bol;
+        padding-bottom: $paddingBottom;
+    }
+    .tweet_month{
+        font-size: 13px;
+        color: #545158;
+        padding-bottom: 10px;
+    }
+    .footer_images{
+        display: flex;
+        justify-content: space-between;
+    }
+    .img_container{
+        height: 80px;
+        width: 80px;
+    }
+}
+
+#go_up_btn{
+    background-color: $orange;
+    width: 55px;
+    height: 55px;
+    opacity: .7;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    opacity: 0;
+    transition: .5s all;
 }
 
 @media screen and (max-width: $mobileBreakpoint) {
@@ -406,5 +491,46 @@ $spacer: 15px;
         align-items: center;
         justify-content: center;
         gap: 50px;
+    }
+    #social_section{
+        .content{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .circle_element{
+            width: 45px;
+            height: 45px;
+            padding: 13px;
+        }
+        form{
+            margin: 0;
+            flex-direction: row;
+            vertical-align: middle;
+            align-items: center;
+            justify-content: space-between;
+        }
+        input{
+            width: 250px;
+            padding: 12px 9px;
+        }
+    }
+    footer{
+        .content{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 30px;
+        }
+        #logo{
+            margin-bottom: 30px;
+        }
+        span,
+        .legal_txt{
+            font-size: 13px;
+        }
+        .tweet_month{
+            font-size: 11px;
+        }
+
     }
 }

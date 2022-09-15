@@ -82,7 +82,6 @@
             </div>
         </div>
     </section>
-
     <section id="section_five">
         <div class="content">
             {{ 
@@ -93,7 +92,6 @@
             <p class="small_header">Robert Bringhurst</p>
         </div>
     </section>
-
     <section id="section_six" class="content">
         {{ 
             header.sectionHeader(
@@ -118,7 +116,6 @@
             {% endfor %}
         </div>
     </section>
-
     <section id="section_seven">
         <div class="grid_elements content">
             <div class="grid_header">
@@ -151,15 +148,16 @@
                 <img src="./img/ikon_google.png" class="circle_element opacity_element" alt="ikon"> 
                 <img src="./img/ikon_pinterest.png" class="circle_element opacity_element" alt="ikon"> 
             </section>
-            <form action="novalidate">
+            <form id="newsletter_form">
                 <p class="small_header">get the newsletter</p>
                 <input type="email" placeholder="Your email adress">
-                <button type="submit">
+                <button id="submit_btn" type="submit">
                     subscribe
                 </button>
             </form>
         </div>
     </section>
+    <img src="./img/iko_go_top.svg" id="go_up_btn" class="circle_element"></button>
 {% endblock %}
 
 {% set offerItems = [
