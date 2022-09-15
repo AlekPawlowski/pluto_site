@@ -1,5 +1,223 @@
-
+{%extends "./layout/html.njk" %}
 
 {% block content %}
-    main content
+    <section id="page_header" class="purple_section">
+        <div class="content">
+            <h1>About us</h1>
+            <p class="breadcrumbs">
+                <a href="#" target="_self">Home</a> / 
+                <a href="#" target="_self">About us</a>
+            </p>
+        </div>
+    </section>
+    <section id="section_one" class="content section_two_elements">
+        {# normaly here should go img instead of div placeholder #}
+        <div class="img_container"></div>
+        <article>
+            <p class="article_header">Welcome to our company</p>
+            <p class="article_content">
+                Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Mauris interdum erat eget quam mattis, suscipit fermentum sem ultrices. Quisque commodo quam sit amet velit porta molestie. Morbi sodales, massa at rutrum pharetra, lectus lorem rutrum velit, quis lobortis enim lacus eu eros. Vivamus suscipit eget nunc id interdum. 
+                <br>
+                Ut dictum justo ut rutrum pellentesque. In vestibulum vel mi vel convallis. Integer semper consectetur erat et vestibulum. Vestibulum vulputate metus ac purus faucibus, at rhoncus enim eleifend. Vestibulum purus quam, tempus sit amet quam ac, hendrerit porttitor metus. Curabitur fermentum pellentesque adipiscing. Donec lobortis elementum orci. Donec et venenatis.
+            </p>
+        </article>
+    </section>
+    <section id="section_two">
+        <div class="content">
+            {{ 
+                header.sectionHeader(
+                    headerContent='What can we do for you?',
+                    smallHeaderContent='Our services',
+                    paragraphContent="Mauris eget ligula vel nulla dignissim pharetra non sed orci. Praesent consequat egestas dapibus. Quisque faucibus erat at metus adipiscing lacinia."
+                )
+            }}
+            <div class="grid_elements">
+                {% for item in offerItems %}
+                    <div class="grid_ele">
+                        <img src="{{ item.img }}" class="orangeElement" alt="ikon"> 
+                        <article class="copy">
+                            <p class="article_header">{{item.head}}</p>
+                            <p class="article_content">{{item.copy}}</p>
+                        </article>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <section id="section_three" class="content">
+        {{ 
+            header.sectionHeader(
+                headerContent='Things we are good at',
+                smallHeaderContent='Our capabilities'
+            )
+        }}
+        <div class="grid_elements">
+            <div class="expand_container">
+                {% for item in hideShowContent %}
+                    <div class="expand_content">
+                        <a href="#nav{{item.id}}">
+                            <span class="expand"></span>
+                        </a>
+                        <div class="expand_copy">
+                            <p class="article_header">{{item.head}}</p>
+                            <div class="expandable" id="nav{{item.id}}">
+                                <p class="article_content">{{item.copy}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="skils_content">
+                {% for item in lineContent %}
+                <div class="skill_ele">
+                    <p class="copy">
+                        <span class="skill">{{item.skill}}</span>
+                        <span class="seniority">{{item.seniority}}</span>
+                    </p>
+                    <div class="progress_bar_container">
+                        <div class="progress_bar_content" style="width:{{item.progress}}%"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="section_five">
+        <div class="content">
+            {{ 
+                header.sectionHeader(
+                    headerContent='Typography at its best is a visual form of language linking timelessness and time.'
+                )
+            }}
+            <p class="small_header">Robert Bringhurst</p>
+        </div>
+    </section>
+
+    <section id="section_six" class="content">
+        {{ 
+            header.sectionHeader(
+                headerContent='The right people',
+                smallHeaderContent='Our team'
+            )
+        }}
+        <div class="grid_elements">
+            {% for item in menagment %}
+                <div class="grid_ele">
+                    <div class="img_container"></div>
+                    <article class="copy">
+                        <p class="article_header">{{item.name}}</p>
+                        <p class="article_content">{{item.position}}</p>
+                        <aside class="social">
+                            <img src="./img/ikon_facebook.png" alt="fb">
+                            <img src="./img/ikon_twitter.png" alt="twitter">
+                            <img src="./img/ikon_linkedin.png" alt="linkedin">
+                        </aside>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="section_seven" class="content">
+        <div class="grid_header">
+            <p class="small_header">Our clients</p>
+            <p class="text_block_header">Meet our happy customers</p>
+            <p class="header_copy">Pellentesque varius ipsum sed odio tristique lacinia. Mauris vel felis at mauris sollicitudin condimentum.</p>
+        </div>
+    <section>
 {% endblock %}
+
+{% set offerItems = [
+    {
+        img: './img/iko_star.svg',
+        head: 'Brand creation',
+        copy: 'Praesent dignissim dui eu urna feugiat lobortis. Morbi varius nibh sit amet adipiscing mollis. Aenean id neque ut augue gravida posuere.'
+    },
+    {
+        img: './img/ikon_reference.png',
+        head: 'Interface design',
+        copy: 'Donec sed dui consectetur, condimentum tellus nec, lacinia felis. Aenean vehicula erat a justo lobortis, non euismod orci vulputate.'
+    },
+    {
+        img: './img/ikon_cup.png',
+        head: 'Graphic design',
+        copy: 'Nam pharetra justo turpis, quis rutrum lorem lobortis euismod. Praesent augue, consectetur ultricies eros non, lacinia scelerisque ante.'
+    },
+    {
+        img: './img/iko_setting.svg',
+        head: 'Web development',
+        copy: 'Aenean vitae neque mi. Phasellus tempor risus non risus tristique, quis egestas velit vulputate. Sed porttitor non nunc non pharetra.'
+    },
+    {
+        img: './img/iko_like.svg',
+        head: 'Online marketing',
+        copy: 'Duis quis elit hendrerit, tempor magna ac, adipiscing ligula. Maecenas neque nibh, vehicula ut neque at, scelerisque mollis enim.'
+    },
+    {
+        img: './img/iko_file.svg',
+        head: 'Information visualization',
+        copy: 'Integer quis tristique arcu. Ut convallis purus purus, ut facilisis lorem pulvinar sit. Curabitur ullamcorper purus non auctor consectetur.'
+    }
+
+]%}
+
+{% set hideShowContent = [
+    {
+        id: 1,
+        head: 'Problems solving',
+        copy: 'Maecenas placerat arcu purus. Aliquam eget pulvinar purus, vel vehicula lorem. In eu tortor lectus. Phasellus non lacus nec mauris gravida viverra ut id est. Morbi vel urna in mauris interdum dapibus at sodales velit.'
+    },
+    {
+        id: 2,
+        head: 'Systems monitoring',
+        copy: 'Maecenas placerat arcu purus. Aliquam eget pulvinar purus, vel vehicula lorem. In eu tortor lectus. Phasellus non lacus nec mauris gravida viverra ut id est. Morbi vel urna in mauris interdum dapibus at sodales velit.'
+    },
+    {
+        id: 3,
+        head: 'Affect management',
+        copy: 'Maecenas placerat arcu purus. Aliquam eget pulvinar purus, vel vehicula lorem. In eu tortor lectus. Phasellus non lacus nec mauris gravida viverra ut id est. Morbi vel urna in mauris interdum dapibus at sodales velit.'
+    }
+]%}
+
+{% set lineContent = [
+    {
+        progress: 90,
+        skill: 'photoshop',
+        seniority: 'Pro'
+    },
+    {
+        progress: 70,
+        skill: 'illustrator',
+        seniority: 'Very good'
+    },
+    {
+        progress: 50,
+        skill: 'indesign',
+        seniority: 'Good'
+    },
+    {
+        progress: 30,
+        skill: 'after effects',
+        seniority: 'Average'
+    }
+]%}
+
+{% set menagment = [
+    {
+        position: 'ceo',
+        name: 'Robert Judd'
+    },
+    {
+        position: 'Designer',
+        name: 'Eva Barnes'
+    },
+    {
+        position: 'Developer',
+        name: 'Eugene Fletcher'
+    },
+    {
+        position: 'Support',
+        name: 'Janet McKenzie'
+    }
+] %}

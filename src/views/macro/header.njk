@@ -1,0 +1,19 @@
+{% macro sectionHeader(
+    headerContent = "Default Content", 
+    smallHeaderContent,
+    paragraphContent) 
+%}
+    <artcile class="section_header">
+        {% if smallHeaderContent %}
+            <p class="small_header">{{ smallHeaderContent | safe }}</p>
+        {% endif %}
+        <p class="text_block_header">
+            {{headerContent}}
+        </p>
+        {% if paragraphContent%}
+            <p class="header_copy">
+                {{paragraphContent | safe}}
+            </p>
+        {% endif %}
+    </artcile>
+{% endmacro %}
