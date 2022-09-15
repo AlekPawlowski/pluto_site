@@ -34,7 +34,7 @@
             <div class="grid_elements">
                 {% for item in offerItems %}
                     <div class="grid_ele">
-                        <img src="{{ item.img }}" class="orangeElement" alt="ikon"> 
+                        <img src="{{ item.img }}" class="circle_element orange_element" alt="ikon"> 
                         <article class="copy">
                             <p class="article_header">{{item.head}}</p>
                             <p class="article_content">{{item.copy}}</p>
@@ -55,7 +55,7 @@
             <div class="expand_container">
                 {% for item in hideShowContent %}
                     <div class="expand_content">
-                        <a href="#nav{{item.id}}">
+                        <a href="#nav{{item.id}}" target="_self">
                             <span class="expand"></span>
                         </a>
                         <div class="expand_copy">
@@ -137,7 +137,29 @@
                 <div class="img_container"></div>
             </div>
         </div>
-    <section>
+    </section>
+    <section id="section_eight" class="content">
+        <p>Like what you see? Buy this template!</p>
+        <button type="button">take me honey</button>
+    </section>
+    <section id="social_section">
+        <div class="content">
+            <section>
+                <p class="small_header">follow us</p>
+                <img src="./img/ikon_facebook_2.png" class="circle_element opacity_element" alt="ikon"> 
+                <img src="./img/ikon_twitter.png" class="circle_element opacity_element" alt="ikon"> 
+                <img src="./img/ikon_google.png" class="circle_element opacity_element" alt="ikon"> 
+                <img src="./img/ikon_pinterest.png" class="circle_element opacity_element" alt="ikon"> 
+            </section>
+            <form action="novalidate">
+                <p class="small_header">get the newsletter</p>
+                <input type="email" placeholder="Your email adress">
+                <button type="submit">
+                    subscribe
+                </button>
+            </form>
+        </div>
+    </section>
 {% endblock %}
 
 {% set offerItems = [
